@@ -1,6 +1,6 @@
 package com.example.facultades.controller;
 
-import com.example.facultades.model.Rol;
+import com.example.facultades.service.model.Rol;
 import com.example.facultades.service.IRolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

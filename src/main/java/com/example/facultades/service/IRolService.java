@@ -1,6 +1,6 @@
 package com.example.facultades.service;
 
-import com.example.facultades.model.Rol;
+import com.example.facultades.service.model.Rol;
 
 import java.util.List;
 import java.util.Optional;

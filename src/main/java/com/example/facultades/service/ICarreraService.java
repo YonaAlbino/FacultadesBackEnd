@@ -1,6 +1,6 @@
 package com.example.facultades.service;
 
-import com.example.facultades.model.Carrera;
+import com.example.facultades.service.model.Carrera;
 
 import java.util.List;
 import java.util.Optional;

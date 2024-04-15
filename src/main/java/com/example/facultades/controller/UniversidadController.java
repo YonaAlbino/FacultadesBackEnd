@@ -1,10 +1,12 @@
 package com.example.facultades.controller;
 
 import com.example.facultades.excepciones.RegistroExistenteException;
-import com.example.facultades.excepciones.UniversidadRepetidaException;
-import com.example.facultades.model.Universidad;
+import com.example.facultades.service.model.Universidad;
 import com.example.facultades.service.IUniversidadService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -58,5 +60,15 @@ public class UniversidadController {
         return new ResponseEntity<>(universidades, HttpStatus.OK);
     }
 
+    @GetMapping("/paginadas")
+    public ResponseEntity<List<Universidad>>  obtenerUniversidadesPaginadas(
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue =  "10") int tamanio)
+    {
+        Pageable pageable = PageRequest.of(pagina, tamanio);
+        Page<Universidad> universidades = universidadService.obtenerUniversidadesPaginadas(pageable);
+        List<Universidad> listaUniversidades = universidades.getContent();
+        return new ResponseEntity<>(listaUniversidades, HttpStatus.OK);
+    }
 
 }

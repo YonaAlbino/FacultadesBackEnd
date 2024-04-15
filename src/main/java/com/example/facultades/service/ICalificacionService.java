@@ -1,6 +1,6 @@
 package com.example.facultades.service;
 
-import com.example.facultades.model.Calificacion;
+import com.example.facultades.service.model.Calificacion;
 
 import java.util.List;
 import java.util.Optional;

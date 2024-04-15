@@ -1,7 +1,6 @@
 package com.example.facultades.controller;
 
-import com.example.facultades.model.Calificacion;
-import com.example.facultades.model.Universidad;
+import com.example.facultades.service.model.Calificacion;
 import com.example.facultades.service.ICalificacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.example.facultades.controller;
 
-import com.example.facultades.model.Comentario;
+import com.example.facultades.service.model.Comentario;
 import com.example.facultades.service.IComentarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

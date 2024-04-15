@@ -1,6 +1,6 @@
 package com.example.facultades.repository;
 
-import com.example.facultades.model.Usuario;
+import com.example.facultades.service.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

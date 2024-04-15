@@ -1,6 +1,6 @@
 package com.example.facultades.service;
 
-import com.example.facultades.model.Comentario;
+import com.example.facultades.service.model.Comentario;
 import com.example.facultades.repository.IComentarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

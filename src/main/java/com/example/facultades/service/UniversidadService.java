@@ -1,10 +1,10 @@
 package com.example.facultades.service;
 
 import com.example.facultades.excepciones.RegistroExistenteException;
-import com.example.facultades.excepciones.UniversidadRepetidaException;
-import com.example.facultades.model.Universidad;
+import com.example.facultades.service.model.Universidad;
 import com.example.facultades.repository.IUniversidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -63,5 +63,10 @@ public class UniversidadService implements IUniversidadService {
         Pageable pageable = PageRequest.of(0, 3); // Limitar a las tres primeras universidades
         List<Universidad> universidades = universidadRepository.findTop3UniversidadesByPromedioNota(pageable);
         return universidades;
+    }
+
+    @Override
+    public Page<Universidad> obtenerUniversidadesPaginadas(Pageable pageable) {
+        return universidadRepository.findAll(pageable);
     }
 }

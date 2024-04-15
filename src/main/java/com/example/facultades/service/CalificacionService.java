@@ -1,6 +1,6 @@
 package com.example.facultades.service;
 
-import com.example.facultades.model.Calificacion;
+import com.example.facultades.service.model.Calificacion;
 import com.example.facultades.repository.ICalificacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,9 +1,7 @@
 package com.example.facultades.controller;
 
-import com.example.facultades.model.Carrera;
-import com.example.facultades.model.Comentario;
+import com.example.facultades.service.model.Carrera;
 import com.example.facultades.service.ICarreraService;
-import com.example.facultades.service.IComentarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

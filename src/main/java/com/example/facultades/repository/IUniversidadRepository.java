@@ -1,6 +1,6 @@
 package com.example.facultades.repository;
 
-import com.example.facultades.model.Universidad;
+import com.example.facultades.service.model.Universidad;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

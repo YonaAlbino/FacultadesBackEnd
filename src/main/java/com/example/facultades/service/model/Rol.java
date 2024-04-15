@@ -1,4 +1,4 @@
-package com.example.facultades.model;
+package com.example.facultades.service.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -15,16 +13,15 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Respuesta {
+public class Rol {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    private String mensaje;
-    private Date fecha;
+    private String rol;
+
 
     @OneToMany()
-    private List<Respuesta> listaRespuesta = new ArrayList<Respuesta>();
-
+    private List<Usuario> listaUsuarios;
 
 }

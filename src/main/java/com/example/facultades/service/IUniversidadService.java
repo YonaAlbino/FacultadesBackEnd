@@ -1,8 +1,9 @@
 package com.example.facultades.service;
 
 import com.example.facultades.excepciones.RegistroExistenteException;
-import com.example.facultades.excepciones.UniversidadRepetidaException;
-import com.example.facultades.model.Universidad;
+import com.example.facultades.service.model.Universidad;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,5 +22,5 @@ public interface IUniversidadService {
     public List<Universidad> obtenerTresPrimerasImagenes();
 
 
-
+    Page<Universidad> obtenerUniversidadesPaginadas(Pageable pageable);
 }

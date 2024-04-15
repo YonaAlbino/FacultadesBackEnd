@@ -2,7 +2,7 @@ package com.example.facultades.controller;
 
 import com.example.facultades.excepciones.ContrasenaNoEncontradaException;
 import com.example.facultades.excepciones.EmailNoEncontradoException;
-import com.example.facultades.model.Usuario;
+import com.example.facultades.service.model.Usuario;
 import com.example.facultades.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

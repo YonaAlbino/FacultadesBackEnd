@@ -2,7 +2,7 @@ package com.example.facultades.service;
 
 import com.example.facultades.excepciones.ContrasenaNoEncontradaException;
 import com.example.facultades.excepciones.EmailNoEncontradoException;
-import com.example.facultades.model.Usuario;
+import com.example.facultades.service.model.Usuario;
 
 import java.util.List;
 import java.util.Optional;

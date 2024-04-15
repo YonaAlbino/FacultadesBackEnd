@@ -1,4 +1,4 @@
-package com.example.facultades.model;
+package com.example.facultades.service.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,15 +13,21 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Rol {
+public class Carrera {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    private String rol;
+    private String nombre;
+    private String grado;
+    private String duracion;
+
+    private boolean activa =  true;
 
 
     @OneToMany()
-    private List<Usuario> listaUsuarios;
+    private List<Comentario> listaComentarios;
 
+    @OneToMany()
+    private List<Calificacion> listaCalificacion;
 }

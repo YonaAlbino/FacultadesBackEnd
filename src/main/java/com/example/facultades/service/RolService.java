@@ -1,7 +1,6 @@
 package com.example.facultades.service;
 
-import com.example.facultades.model.Rol;
-import com.example.facultades.repository.IRespuestaRepository;
+import com.example.facultades.service.model.Rol;
 import com.example.facultades.repository.IRolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

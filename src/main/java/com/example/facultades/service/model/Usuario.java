@@ -1,4 +1,4 @@
-package com.example.facultades.model;
+package com.example.facultades.service.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
