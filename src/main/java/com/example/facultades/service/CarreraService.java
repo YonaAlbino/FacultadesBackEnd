@@ -2,7 +2,12 @@ package com.example.facultades.service;
 
 import com.example.facultades.service.model.Carrera;
 import com.example.facultades.repository.ICarreraRepository;
+import com.example.facultades.service.model.CarreraDto;
+import com.example.facultades.service.model.Universidad;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,6 +47,20 @@ public class CarreraService implements ICarreraService{
         this.saveCarrera(carrera);
         return carrera;
     }
+
+    @Override
+    public Page<Carrera> obtenerCarrerasPaginadas(Pageable pageable) {
+        return carreraRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<Carrera> getTopCarreras(int cantidadRegistros, int pagina) {
+        Pageable pageable = PageRequest.of(cantidadRegistros, pagina);
+        List<Carrera> carreras = carreraRepository.getTopCarreras(pageable);
+        return carreras;
+    }
+
+
 
     //@Override
     //public String eliminarAsociacionUiversidadCarrera(Long id) {

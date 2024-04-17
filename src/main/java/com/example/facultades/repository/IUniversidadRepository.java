@@ -22,6 +22,6 @@ public interface IUniversidadRepository extends JpaRepository<Universidad, Long>
             "JOIN u.listaCalificacion c " +
             "GROUP BY u " +
             "ORDER BY promedio DESC")
-    List<Universidad> findTop3UniversidadesByPromedioNota(Pageable pageable);
+    List<Universidad> getTopUniversidades(Pageable pageable);
 
 }

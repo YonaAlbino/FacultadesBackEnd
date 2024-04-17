@@ -54,9 +54,12 @@ public class UniversidadController {
         return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }
 
-    @GetMapping("/primerasTresImagenes")
-    public ResponseEntity<List<Universidad>> obtenerPrimerasTresImagenes(){
-        List<Universidad> universidades = universidadService.obtenerTresPrimerasImagenes();
+    @GetMapping("/obtenerTopUniversidades")
+    public ResponseEntity<List<Universidad>> obtenerPrimerasTresImagenes(
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue =  "10") int tamanio)
+    {
+        List<Universidad> universidades = universidadService.obtenerTopUniversidades(pagina, tamanio);
         return new ResponseEntity<>(universidades, HttpStatus.OK);
     }
 

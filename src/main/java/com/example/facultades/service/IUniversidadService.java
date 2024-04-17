@@ -19,7 +19,7 @@ public interface IUniversidadService {
 
     public Universidad editUniversidad(Universidad universidad) throws RegistroExistenteException;
 
-    public List<Universidad> obtenerTresPrimerasImagenes();
+    public List<Universidad>obtenerTopUniversidades(int cantidadRegistros, int pagina);
 
 
     Page<Universidad> obtenerUniversidadesPaginadas(Pageable pageable);

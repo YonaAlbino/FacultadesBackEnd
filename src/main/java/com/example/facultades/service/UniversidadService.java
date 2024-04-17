@@ -59,9 +59,9 @@ public class UniversidadService implements IUniversidadService {
     }
 
     @Override
-    public List<Universidad> obtenerTresPrimerasImagenes() {
-        Pageable pageable = PageRequest.of(0, 3); // Limitar a las tres primeras universidades
-        List<Universidad> universidades = universidadRepository.findTop3UniversidadesByPromedioNota(pageable);
+    public List<Universidad> obtenerTopUniversidades(int cantidadRegistros, int pagina) {
+        Pageable pageable = PageRequest.of(cantidadRegistros, pagina);
+        List<Universidad> universidades = universidadRepository.getTopUniversidades(pageable);
         return universidades;
     }
 
