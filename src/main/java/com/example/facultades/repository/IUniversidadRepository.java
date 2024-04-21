@@ -4,6 +4,7 @@ import com.example.facultades.service.model.Universidad;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,5 +24,14 @@ public interface IUniversidadRepository extends JpaRepository<Universidad, Long>
             "GROUP BY u " +
             "ORDER BY promedio DESC")
     List<Universidad> getTopUniversidades(Pageable pageable);
+
+    @Query("SELECT u " +
+            "FROM Universidad u " +
+            "JOIN u.listaCarreras lc " +
+            "WHERE lc.id = :listaCarrerasId")
+    Universidad getIDUniversidadPorCarreraId(@Param("listaCarrerasId") Long carreraId);
+
+
+
 
 }

@@ -69,4 +69,9 @@ public class UniversidadService implements IUniversidadService {
     public Page<Universidad> obtenerUniversidadesPaginadas(Pageable pageable) {
         return universidadRepository.findAll(pageable);
     }
+
+    @Override
+    public Universidad getIDUniversidadPorCarreraId(Long carreraId) {
+        return  universidadRepository.getIDUniversidadPorCarreraId(carreraId);
+    }
 }

@@ -74,4 +74,13 @@ public class UniversidadController {
         return new ResponseEntity<>(listaUniversidades, HttpStatus.OK);
     }
 
+    @GetMapping("/universidadID/{idCarrera}")
+    public ResponseEntity<Universidad>  getuniversidadIdCarrera(@PathVariable Long idCarrera){
+           Universidad universidad = universidadService.getIDUniversidadPorCarreraId(idCarrera);
+        return new ResponseEntity<>(universidad, HttpStatus.OK);
+    }
+
+
+
+
 }

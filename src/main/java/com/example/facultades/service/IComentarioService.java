@@ -15,4 +15,8 @@ public interface IComentarioService {
     public Optional<Comentario> findComentario(Long id);
 
     public Comentario editComentario(Comentario comentario);
+
+    public List<Comentario> findComentariosByUniversidadId (Long idUniversidad, int cantidadRegistros, int pagina);
+
+    public List<Comentario> findComentariosByCarreraId (Long idCarrera, int cantidadRegistros, int pagina);
 }

@@ -3,6 +3,8 @@ package com.example.facultades.service;
 import com.example.facultades.service.model.Comentario;
 import com.example.facultades.repository.IComentarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,5 +43,19 @@ public class ComentarioService implements IComentarioService{
     public Comentario editComentario(Comentario comentario) {
         Comentario comentarioGuardado =  this.saveComentario(comentario);
         return comentarioGuardado;
+    }
+
+    @Override
+    public List<Comentario> findComentariosByUniversidadId(Long idUniversidad, int cantidadRegistros, int pagina) {
+        Pageable pageable = PageRequest.of(cantidadRegistros, pagina);
+        List<Comentario> listaComentarios = comentarioRepository.findComentariosByUniversidadId(idUniversidad, pageable);
+        return listaComentarios;
+    }
+
+    @Override
+    public List<Comentario> findComentariosByCarreraId(Long idCarrera, int cantidadRegistros, int pagina) {
+        Pageable pageable = PageRequest.of(cantidadRegistros, pagina);
+        List<Comentario> listaComentarios = comentarioRepository.findComentariosByCarreraId(idCarrera, pageable);
+        return listaComentarios;
     }
 }

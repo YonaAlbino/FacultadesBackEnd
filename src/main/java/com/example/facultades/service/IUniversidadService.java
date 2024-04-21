@@ -21,6 +21,7 @@ public interface IUniversidadService {
 
     public List<Universidad>obtenerTopUniversidades(int cantidadRegistros, int pagina);
 
-
     Page<Universidad> obtenerUniversidadesPaginadas(Pageable pageable);
+
+    public Universidad getIDUniversidadPorCarreraId(Long listaCarrerasId);
 }

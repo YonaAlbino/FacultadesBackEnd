@@ -49,4 +49,22 @@ public class ComentarioController {
        String mensaje = comentarioService.deleteComentario(id);
         return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }
+
+    @GetMapping("/encontrarComentariosPorIdUniversidad/{idUniversidad}")
+    public ResponseEntity<List<Comentario>> encontrarComentariosPorIdUniversidad(
+            @PathVariable long idUniversidad,
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue =  "10") int tamanio){
+        List<Comentario> listaComentarios = comentarioService.findComentariosByUniversidadId(idUniversidad, pagina, tamanio);
+        return new ResponseEntity<>(listaComentarios, HttpStatus.OK);
+    }
+
+    @GetMapping("/encontrarComentariosPorIdCarrera/{idCarrera}")
+    public ResponseEntity<List<Comentario>> encontrarComentariosPorIdCarrera(
+            @PathVariable long idCarrera,
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue =  "10") int tamanio){
+        List<Comentario> listaComentarios = comentarioService.findComentariosByCarreraId(idCarrera, pagina, tamanio);
+        return new ResponseEntity<>(listaComentarios, HttpStatus.OK);
+    }
 }
