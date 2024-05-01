@@ -34,5 +34,7 @@ public class Usuario {
     @OneToMany()
     private  List<Respuesta> listaRespuesta;
 
+    @OneToMany()
+    private List<Reaccion> listaReaccion;
 
 }

@@ -25,9 +25,9 @@ public class Carrera {
     private boolean activa =  true;
 
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Comentario> listaComentarios;
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Calificacion> listaCalificacion;
 }

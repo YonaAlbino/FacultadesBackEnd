@@ -26,5 +26,6 @@ public class Respuesta {
     @OneToMany()
     private List<Respuesta> listaRespuesta = new ArrayList<Respuesta>();
 
-
+    @OneToMany()
+    private List<Reaccion> listaReaccion;
 }

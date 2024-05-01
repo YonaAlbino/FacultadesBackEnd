@@ -26,13 +26,14 @@ public class Universidad {
     private String descripcion;
     private String direccionWeb;
 
-    @OneToMany()
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Carrera> listaCarreras;
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Calificacion> listaCalificacion;
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Comentario> listaComentarios;
 
 

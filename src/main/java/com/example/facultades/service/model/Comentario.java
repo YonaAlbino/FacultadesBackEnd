@@ -20,7 +20,8 @@ public class Comentario {
     @Column(length = 1000) // Por ejemplo, aquí estamos especificando una longitud máxima de 1000 caracteres
     private String mensaje;
 
-
+    @OneToMany()
+    private List<Reaccion> listaReaccion;
 
     @OneToMany()
     private List<Respuesta> listaRespuesta;
