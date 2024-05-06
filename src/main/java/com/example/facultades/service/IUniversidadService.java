@@ -24,4 +24,6 @@ public interface IUniversidadService {
     Page<Universidad> obtenerUniversidadesPaginadas(Pageable pageable);
 
     public Universidad getIDUniversidadPorCarreraId(Long listaCarrerasId);
+
+    public List<Universidad> getUniversidadByName(String nombreUniversidad);
 }

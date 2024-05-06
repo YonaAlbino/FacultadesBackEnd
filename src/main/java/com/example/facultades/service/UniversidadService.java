@@ -74,4 +74,13 @@ public class UniversidadService implements IUniversidadService {
     public Universidad getIDUniversidadPorCarreraId(Long carreraId) {
         return  universidadRepository.getIDUniversidadPorCarreraId(carreraId);
     }
+
+    @Override
+    public List<Universidad> getUniversidadByName(String nombreUniversidad) {
+        List<Universidad> ListaUniversidades;
+        ListaUniversidades = universidadRepository.getUniversidadByName(nombreUniversidad);
+        return ListaUniversidades;
+    }
+
+
 }

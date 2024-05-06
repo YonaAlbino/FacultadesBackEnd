@@ -31,6 +31,12 @@ public interface IUniversidadRepository extends JpaRepository<Universidad, Long>
             "WHERE lc.id = :listaCarrerasId")
     Universidad getIDUniversidadPorCarreraId(@Param("listaCarrerasId") Long carreraId);
 
+    @Query("SELECT u AS universidad " +
+            "FROM Universidad u " +
+            "WHERE u.nombre LIKE %:nombreUniversidad%")
+    List<Universidad> getUniversidadByName(String nombreUniversidad);
+
+
 
 
 

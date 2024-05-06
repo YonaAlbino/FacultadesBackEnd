@@ -80,7 +80,10 @@ public class UniversidadController {
         return new ResponseEntity<>(universidad, HttpStatus.OK);
     }
 
-
-
+    @GetMapping("/findUniversidadByName/{nombreUniversidad}")
+    public ResponseEntity<List<Universidad>> findUniversidadByName(@PathVariable String nombreUniversidad) {
+        List<Universidad> ListaUniversidades = universidadService.getUniversidadByName(nombreUniversidad);
+        return new ResponseEntity<>(ListaUniversidades, HttpStatus.OK);
+    }
 
 }
