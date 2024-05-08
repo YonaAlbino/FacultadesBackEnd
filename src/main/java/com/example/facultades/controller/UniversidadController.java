@@ -30,8 +30,9 @@ public class UniversidadController {
     @GetMapping("/buscar/{id}")
     public ResponseEntity<Universidad> findUniversidad(@PathVariable Long id){
         Optional<Universidad> universidad = universidadService.findUniversidad(id);
-        if (universidad.isPresent())
+        if (universidad.isPresent()) {
             return new ResponseEntity<>(universidad.get(), HttpStatus.OK);
+        }
         return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
